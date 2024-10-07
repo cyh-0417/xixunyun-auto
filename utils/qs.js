@@ -6,23 +6,22 @@ const pubkey = require('./pubkey')
 const encrypt = new jsencrypt()
 encrypt.setPublicKey(pubkey)
 const data = qs.stringify({
-account: process.env.ACCOUNT,
-password: process.env.PASSWORD,
-school_id: process.env.SCHOOL_ID,
-request_source: 3,
-system: '5.1.1'
+  account: process.env["0632221014"],
+  password: process.env["cyh221014"],
+  school_id: process.env["2029"],
+  request_source: 3,
+  system: '5.1.1'
 })
 
 
 const signdata = qs.stringify({
-  address: process.env.ADDRESS,
-  address_name: process.env.ADDRESS_NAME,
-  latitude: encrypt.encrypt(process.env.LATITUDE),
-  longitude: encrypt.encrypt(process.env.LONGITUDE),
+  address: process.env["贵州凯里市开发区紫日茶业科技有限公司旁边"],
+  address_name: process.env["凯里经济开发区鑫阳排烟管道厂"],
+  latitude: encrypt.encrypt(process.env["26.524061"]),
+  longitude: encrypt.encrypt(process.env["107.83979"]),
   remark: 0,
   change_sign_resource: 0
 })
-
 const reportdata = (family_name, family_phone) => {
   return qs.stringify({
     health_type: 1,
